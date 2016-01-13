@@ -1,0 +1,127 @@
+%\documentclass[11pt]{scrbook} % use larger type; default would be 10pt
+
+% WITH BLEED
+% US Trade => 6x9, with a 0.125 bleed
+% Adjust images size and gutter so tabs bleed by .125
+% See https://www.createspace.com/Products/Book/InteriorPDF.jsp
+\documentclass[paper=6.14in:9.21in,pagesize=pdftex,11pt,twoside,openright]{scrbook}
+%openright
+% Paper width
+% W = 6.125in (6+0.125 --- bleed)
+% Paper height
+% H = 9.25in (9+2*.125 --- bleed)
+% Paper gutter
+% BCOR = 0.375in (0.5+0.5-0.625 --- margin with bleed)
+% Margin (0.5in imposed on lulu, recommended on createspace)
+% m = 0.625in (0.5+0.125 --- bleed)
+% Text height
+% h = H - 2m = 8in
+% Text width
+% w = W - 2m - BCOR = 4.5in
+\areaset[0.375in]{4.5in}{8in}
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%\usepackage{mitpress}
+\usepackage{framed}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{graphicx} % support the \includegraphics command and options
+%\usepackage{wrapfig}
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[font={small,it}]{caption}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{harvard}
+\usepackage{marginnote}
+
+\usepackage{makeidx}
+\usepackage{idxlayout}
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+%\pagestyle{fancy} % options: empty , plain , fancy
+%\renewcommand{\headrulewidth}{0pt} % customise the layout...
+%\lhead{}\chead{}\rhead{}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\newcommand{\screencast}[2]{
+  \marginnote{\href{#1}{\includegraphics[width=1cm]{figs/youtube/#2}}}}
+
+
+%%% END Article customizations
+
+%%% The ``real'' document content comes below...
+\makeindex
+
+
+\begin{document}
+%\maketitle
+
+\thispagestyle{empty}
+\begin{flushleft}
+Nikolaus Correll\\
+Swarm Intelligence, $\alpha$-version, \today\\
+%ISBN-13: 978-1493773077
+\end{flushleft}
+
+\vfill
+
+\begin{figure}[!h]
+\includegraphics[width=1in]{figs/by-nc-nd}
+\end{figure}
+
+This book is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. You are free to share, i.e., copy, distribute and transmit the work under the following conditions: You must attribute the work to its main author, you may not use this work for commercial purposes, and you may not alter, transform, or create derivatives of this work, except for written permission by the author. For more information, please consult \url{http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US}.
+
+
+\cleardoublepage
+\thispagestyle{empty}
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\end{center}
+\vspace*{\fill}
+
+\tableofcontents
+
+\chapter*{Preface}
+This book is released under a Creative Commons license, which allows anyone to copy and share this book, although not for commercial purposes and not to create derivatives of these works. This license comes very close to the ``copyright'' of a standard textbook, except that you are free to copy it for non-commercial purposes. I have chosen this format as it seems to maintain the best trade-off between a freely available textbook resource that others hopefully contribute to and maintaining a consistent curriculum that others can refer to. 
+
+\begin{flushright}
+Nikolaus Correll\\
+Boulder, Colorado, \today
+\end{flushright}
+
+
+\bibliographystyle{agsm}
+\bibliography{robotics}
+
+\printindex
+
+\end{document}
